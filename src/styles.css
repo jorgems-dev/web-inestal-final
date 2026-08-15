@@ -4,3 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "flowbite/src/themes/default";
 
+/* Estado inicial: transparente y desplazado hacia abajo */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Estado final: visible y en su posición original */
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

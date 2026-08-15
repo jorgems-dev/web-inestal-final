@@ -1,104 +1,103 @@
-<div class="bg-white dark:bg-gray-900">
-    <div class="flex flex-col items-center justify-center space-y-8 lg:-mx-4 lg:flex-row lg:items-stretch lg:space-y-0 mb-5 mt-20">
-        <h2
-            class="text-5xl inline-flex items-center justify-center m-10 font-semibold tracking-tight text-[#7c70d9] bg-gray-50 dark:bg-gray-700">
-            Reservas
-        </h2>
-    </div>
+<section id="reservas" appFadeUp
+  class="m-4 md:m-10 p-10 md:p-20 scroll-mt-35 rounded-lg shadow-xs border border-default"
+>
+  <div class="text-center mb-10 md:mb-20">
+    <span
+      class="bg-[#7c70d9]/20 text-[#7c70d9] px-4 py-2 rounded-full font-semibold hover:bg-[#7c70d9]/30 transition"
+    >
+      Reservar Online
+    </span>
 
-    <div class="container px-6 py-8 mx-auto">
+    <h1 class="mt-5 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
+      Reserva tu pista
+    </h1>
+  </div>
+
+  <div
+    class="max-w-6xl mx-auto px-0 md:px-10 grid gap-10 md:grid-cols-2 justify-items-center"
+  >
+
+    <!-- Pista 1 -->
+    <div
+      class="flex flex-col items-center w-full max-w-sm transition-all duration-300 ease-in-out hover:scale-105"
+    >
+      <!-- Imagen -->
+      <div
+        class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
+        style="
+          background-image: url('https://eeze47eafj4.exactdn.com/es/wp/wp-content/uploads/2022/11/todos-tipos-pistas-de-padel.jpg');
+        "
+      ></div>
+
+      <!-- Información -->
+      <div
+        class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
+      >
+        <h3
+          class="py-2 font-bold tracking-wide text-center text-gray-800 dark:text-white"
+        >
+          Pista García Moreno
+        </h3>
+
         <div
-            class="flex flex-col items-center justify-center space-y-8 lg:-mx-4 lg:flex-row lg:items-stretch lg:space-y-0">
-            <div
-                class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700 transition-transform duration-300 ease-in-out hover:scale-105">
-                <div class="flex-shrink-0">
-                    <h2
-                        class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-[#7c70d9] uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                        Pista profesional
-                    </h2>
-                </div>
-
-                <div class="flex-shrink-0">
-                    <span class="pt-2 text-3xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                        20.00€
-                    </span>
-
-                    <span class="text-gray-500 dark:text-gray-400">
-                        / hora
-                    </span>
-                </div>
-
-                <ul class="flex-1 space-y-4">
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Pista profesional de césped artificial
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Iluminación LED para juego nocturno
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Acceso a vestuarios y duchas
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Reserva online rápida y segura
-                    </li>
-                </ul>
-
-                <button
-                    class="inline-flex items-center justify-center px-4 py-2 font-medium text-white uppercase transition-colors bg-[#7c70d9] rounded-lg hover:bg-[#6a5abc] focus:outline-none">
-                    Reservar pista
-                </button>
-            </div>
-
-            <div
-                class="flex flex-col w-full max-w-sm p-8 space-y-8 text-center bg-white border-2 border-gray-200 rounded-lg lg:mx-4 dark:bg-gray-900 dark:border-gray-700 transition-transform duration-300 ease-in-out hover:scale-105">
-                <div class="flex-shrink-0">
-                    <h2
-                        class="inline-flex items-center justify-center px-2 font-semibold tracking-tight text-[#7c70d9] uppercase rounded-lg bg-gray-50 dark:bg-gray-700">
-                        Torneos
-                    </h2>
-                </div>
-
-                <div class="flex-shrink-0">
-                    <span class="pt-2 text-3xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                        15.00€
-                    </span>
-
-                    <span class="text-gray-500 dark:text-gray-400">
-                        / persona
-                    </span>
-                </div>
-
-
-                <ul class="flex-1 space-y-4">
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Participación en torneo organizado
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Welcome pack para jugadores
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Mínimo 2 partidos garantizados
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Premios para campeones y finalistas
-                    </li>
-
-                    <li class="text-gray-500 dark:text-gray-400">
-                        Material disponible en alquiler (palas y pelotas)
-                    </li>
-                </ul>
-
-                <button
-                    class="inline-flex items-center justify-center px-4 py-2 font-medium text-white uppercase transition-colors bg-[#7c70d9] rounded-lg hover:bg-[#6a5abc] focus:outline-none">
-                    Participar
-                </button>
-            </div>
+          class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
+        >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.reservadeportes.com/inestalpadelclub.html"
+            class="w-full"
+          >
+            <button
+              class="w-full px-6 py-2.5 text-sm font-semibold text-white bg-[#7c70d9] rounded-4xl hover:bg-[#6a5abc] shadow-xl active:shadow-inner transition-all duration-300 cursor-pointer"
+            >
+              Reservar
+            </button>
+          </a>
         </div>
+      </div>
     </div>
-</div>
+
+    <!-- Pista 2 -->
+    <div
+      class="flex flex-col items-center w-full max-w-sm transition-all duration-300 ease-in-out hover:scale-105"
+    >
+      <!-- Imagen -->
+      <div
+        class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
+        style="
+          background-image: url('https://eeze47eafj4.exactdn.com/es/wp/wp-content/uploads/2022/11/todos-tipos-pistas-de-padel.jpg');
+        "
+      ></div>
+
+      <!-- Información -->
+      <div
+        class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
+      >
+        <h3
+          class="py-2 font-bold tracking-wide text-center text-gray-800 dark:text-white"
+        >
+          Pista Margareto
+        </h3>
+
+        <div
+          class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
+        >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.reservadeportes.com/inestalpadelclub.html"
+            class="w-full"
+          >
+            <button
+              class="w-full px-6 py-2.5 text-sm font-semibold text-white bg-[#7c70d9] rounded-4xl hover:bg-[#6a5abc] shadow-xl active:shadow-inner transition-all duration-300 cursor-pointer"
+            >
+              Reservar
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

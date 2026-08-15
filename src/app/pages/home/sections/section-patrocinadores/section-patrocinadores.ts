@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FadeUpDirective } from '../../../../directives/fade-up';
 
 @Component({
-  selector: 'app-section-reservas',
+  selector: 'app-section-patrocinadores',
   imports: [FadeUpDirective],
-  templateUrl: './section-reservas.html',
-  styleUrl: './section-reservas.css',
+  standalone: true,
+  templateUrl: './section-patrocinadores.html',
 })
-export class SectionReservas {}
+export class SectionPatrocinadores {}

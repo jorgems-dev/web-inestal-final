@@ -1,43 +1,150 @@
-<nav class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 mb-10">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" />
-            <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Flowbite</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
-            aria-controls="navbar-default" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
-            </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul
-                class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
-                        aria-current="page">Home</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Pricing</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
-                </li>
-            </ul>
-        </div>
+<section
+  id="nav"
+  class="relative h-screen bg-cover bg-center"
+  style="
+    background-image: url(https://images.unsplash.com/photo-1646649853703-7645147474ba?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  "
+>
+  <div class="absolute inset-0 bg-black/50"></div>
+  <nav
+    id="navbar"
+    [class.bg-black]="isScrolled && !isMenuOpen"
+    [class.bg-transparent]="!isScrolled && !isMenuOpen"
+    class="fixed w-full z-50 transition-colors top-0 left-0 w-full flex justify-between items-center text-white duration-300"
+  >
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 h-20">
+      <a href="#nav" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img
+          id="logo"
+          src="./recursos/nombre-blanco-pista-padel-club.png"
+          class="h-40 md:h-52 lg:h-52 object-contain mt-5 transition-all duration-300"
+        />
+      </a>
+      <button
+        id="menu-button"
+        type="button"
+        (click)="toggleMenu()"
+        [class.fixed]="isMenuOpen"
+        [class.top-6]="isMenuOpen"
+        [class.left-1/2]="isMenuOpen"
+        [class.-translate-x-1/2]="isMenuOpen"
+        [class.z-50]="isMenuOpen"
+        class="inline-flex items-center w-15 h-15 justify-center text-sm text-body rounded-base md:hidden hover:text-heading focus:outline-none"
+      >
+        <span class="sr-only">Abrir menú</span>
+        <svg
+          id="icon-open"
+          [class.hidden]="isMenuOpen"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="white"
+          stroke-width="2"
+          class="w-7 h-7 absolute transition-all duration-200 ml-35"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 7h14M5 12h14M5 17h14"></path>
+        </svg>
+        <svg
+          id="icon-close"
+          [class.hidden]="!isMenuOpen"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="white"
+          stroke-width="2"
+          class="w-6 h-6 absolute hidden transition duration-300 inset-0 ml-5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div
+        id="navbar-default"
+        [class.hidden]="!isMenuOpen"
+        class="fixed inset-0 h-screen w-screen z-40 bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center p-6 md:!flex md:static md:h-auto md:w-auto md:bg-transparent md:backdrop-blur-none md:p-0"
+      >
+        <ul
+          class="font-medium flex flex-col items-center text-center p-4 md:p-0 mt-4rounded-base md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:m-0 m-10 md:gap-0 gap-5"
+        >
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="relative block py-2 px-3 md:text-white text-white rounded md:border-0 hover:text-[#7c70d9] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-[#7c70d9] after:transition-all after:duration-300 hover:after:w-full font-bold"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#home"
+              class="relative block py-2 px-3 text-white rounded md:border-0 font-semibold hover:text-[#7c70d9] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-[#7c70d9] after:transition-all after:duration-300 hover:after:w-full"
+              >Club</a
+            >
+          </li>
+          <li>
+            <a
+              href="#servicios"
+              class="relative block py-2 px-3 text-white rounded md:border-0 font-semibold hover:text-[#7c70d9] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-[#7c70d9] after:transition-all after:duration-300 hover:after:w-full"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="#academia"
+              class="relative block py-2 px-3 text-white rounded md:border-0 font-semibold hover:text-[#7c70d9] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-[#7c70d9] after:transition-all after:duration-300 hover:after:w-full"
+              >Academia</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="relative block py-2 px-3 text-white rounded md:border-0 font-semibold hover:text-[#7c70d9] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-[#7c70d9] after:transition-all after:duration-300 hover:after:w-full"
+              >Contacto</a
+            >
+          </li>
+          <li>
+            <a
+              href="#reservas"
+              type="button"
+              class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-4xl text-sm px-10 py-3 text-center leading-5"
+            >
+              Reservar
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
+  <div
+    class="relative z-5 flex flex-col items-center justify-start text-center h-full text-white px-4"
+  >
+    <span
+      class="bg-[#7c70d9]/20 text-[#7c70d9] px-4 py-2 rounded-full font-semibold hover:bg-[#7c70d9]/30 transition mt-50 mb-10"
+    >
+      Pádel Club Inestal
+    </span>
+    <h1 class="text-2xl md:text-6x1 font-bold mb-15">
+      <span class="text-white"> Tu club de pádel en Peñaranda de Bracamonte</span>
+    </h1>
+    <p class="max-w-xl text-gray-200 mb-12 text-2x1 md:text-3x1">
+      Vive la pasión del pádel con las mejores instalaciones, profesores expertos y una comunidad
+      vibrante.
+    </p>
+    <div class="flex gap-4">
+      <a href="#reservas">
+        <button
+          type="button"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-4xl text-sm px-10 py-3 text-center leading-5"
+        >
+          Reservar
+        </button>
+      </a>
+      <a href="#academia">
+        <button
+          class="border border-gray-300 bg-[#00000077] py-2 px-4 md:px-10 rounded-4xl hover:bg-white hover:text-black font-semibold shadow-xl active:shadow-inner transition-all duration-300"
+        >
+          Únete a la escuela
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
