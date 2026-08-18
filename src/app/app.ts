@@ -16,4 +16,6 @@ import { SectionPatrocinadores } from "./pages/home/sections/section-patrocinado
 })
 export class App {
   title = 'Inestal padel club'
+
+  
 }

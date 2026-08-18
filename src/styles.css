@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "flowbite/src/themes/default";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Estado inicial: transparente y desplazado hacia abajo */
 .fade-up {
   opacity: 0;
@@ -16,4 +20,13 @@
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+section[id] {
+  scroll-margin-top: 5rem; 
+
+}
+html, body {
+  overflow-x: hidden;
+  height: auto;
 }

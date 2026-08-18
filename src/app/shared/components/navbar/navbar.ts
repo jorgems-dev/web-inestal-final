@@ -7,6 +7,14 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './navbar.css',
 })
 export class Navbar {
+  sections = [
+    {titulo: 'Inicio', href: '#',},
+    {titulo: 'Club', href: '#home',},
+    {titulo: 'Servicios', href: '#servicios',},
+    {titulo: 'Academia', href: '#academia',},
+    {titulo: 'Contacto', href: '#contacto',},
+  ]
+
   isScrolled = false;
   isMenuOpen = false;
 
@@ -33,5 +41,19 @@ export class Navbar {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 10;
+  }
+
+  scrollTo(sectionId: string, event: Event): void {
+    event.preventDefault();
+
+    this.isMenuOpen = false;
+
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
   }
 }
